@@ -57,4 +57,4 @@ top-left corner.
 - Matplotlib
 
 ## Sentiment Analysis Bonus Task - Not Attempted
-Due to time restraints, sentiment analysis task not attempted
+Due to time constraints, sentiment analysis task not attempted

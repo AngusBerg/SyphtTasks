@@ -2,6 +2,7 @@
 #IMPORTS
 from typing import List
 from matplotlib.animation import FuncAnimation
+from matplotlib.colors import Normalize
 from matplotlib import pyplot as plt
 from math import sqrt, acos, pi
 from tkinter import filedialog
@@ -72,7 +73,7 @@ FUNCTION TO GENERATE A PIE MATCHING THE CURRENT PERCENTAGE
 def createPieForPercentage(percent: float) -> np.array:
     #Create an empty pie that is twice the specified radius in width
     pieDiameter = int(2 * PIE_RADIUS + 1)
-    piePixels = np.zeros((pieDiameter, pieDiameter))
+    piePixels = np.zeros((pieDiameter, pieDiameter), dtype="int")
 
     #Run through each pixel and set to either true or false
     for yy in range(0, pieDiameter):
@@ -104,9 +105,9 @@ def runLoadingPie(milliDelay: int = 10):
     #Start the empty figure
     figure = plt.figure()
     display = figure.add_subplot(1, 1, 1)
-    image = display.imshow(createPieForPercentage(0), animated=True)
+    image = display.imshow(createPieForPercentage(0), animated=True, norm=Normalize(), cmap="binary")
 
-    #Run the animation of the loading pie
+    #Run the animation of the loading piep
     anim = FuncAnimation(figure, updateCurrentPie, frames=101, fargs=(image,), interval=milliDelay, repeat=True)
     print("Close the pie figure to continue.")
     plt.show()
@@ -189,10 +190,41 @@ def runPositionalTestsFromFile():
 
     #Close the file, print the exit message and return
     targetFile.close()
-    print("\n\rExtraction of data from chosen file completed. Returning from process.\n\r")
+    print("\n\rExtraction of data from chosen file completed. Returning from process.")
+    return
+
+"""
+###############################################################################################
+MAIN FUNCTION OF THE PROGRESS PIE
+"""
+def progressPieMain():
+    #Print the entry message for this main function
+    print("#########################################################################\n\r" +
+          "ENTERING THE PROGRESS PIE GENERATOR\n\r" +
+          "#########################################################################")
+
+    #In a while loop, ask the user if they would like to read from a file, display the progress pie of quit
+    while True:
+        userInput = input("Enter 'F' to analyse cases loaded from a file, 'P' to display the progress pie animation, " +
+                          "or Q to quit:\n\r")
+
+        #Branch based on the selected case
+        if userInput[0].lower() == "f":
+            runPositionalTestsFromFile()
+        elif userInput[0].lower() == "p":
+            runLoadingPie()
+        elif userInput[0].lower() == "q":
+            break
+        else:
+            print("ERROR: User entry '{}' is not a valid input.\n\r".format(userInput))
+
+    #Print the exit message for this main function and return to caller
+    print("\n\r#########################################################################\n\r" +
+          "EXITING PROGRESS PIE GENERATOR\n\r" +
+          "#########################################################################")
     return
 
 ###############################################################################################
 #RUNNER FOR WHEN THIS FILE IS CALLED DIRECTLY
 if __name__ == '__main__':
-    runPositionalTestsFromFile()
+    progressPieMain()

@@ -199,7 +199,7 @@ MAIN FUNCTION OF THE PROGRESS PIE
 """
 def progressPieMain():
     #Print the entry message for this main function
-    print("#########################################################################\n\r" +
+    print("\n\n\r#########################################################################\n\r" +
           "ENTERING THE PROGRESS PIE GENERATOR\n\r" +
           "#########################################################################")
 

@@ -149,7 +149,7 @@ MAIN FUNCTION OF THE DATE CALCULATOR
 """
 def dateCalculatorMain():
     #Print a message to mark that the date-gap calculator is starting
-    print("#########################################################################\n\r" +
+    print("\n\n\r#########################################################################\n\r" +
           "ENTERING INTERSTITIAL DAY PERIOD CALCULATOR\n\r" +
           "#########################################################################")
 

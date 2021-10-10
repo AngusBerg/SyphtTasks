@@ -1,14 +1,16 @@
 # SYPHT APPLICATION TAKE-HOME TASKS
 
-**By Angus Berg**
+**By Angus Berg. Written on a Windows Machine with Python 3.7**
 
 This repository contains Angus Berg's answers to the Sypht take home task provided. This Read-Me has been produced to
 provide some very high-level information for my response to the tasks.
 
 If you wish to run my responses to these take home tasks, you can download the file to your local machine and either:
 
-- Run "python project.py" in the command line from the folder to which you have downloaded the files.
-- Double-click the "runProject.bat" file from the folder to which you have downloaded the files.
+- Run "python project.py" in the command line from the folder to which you have downloaded the files. Requires the
+"PYTHON_HOME" environment variable to be set.
+- Double-click the "runProject.bat" file from the folder to which you have downloaded the files. Requires the
+"PYTHON_HOME" environment variable to be set.
 - Extract the "compiledProject" zip file to a chosen location, and then run the "project.exe" file that can be found
 inside the folder it contains. Running it in this way should not require a Python installation.
 
